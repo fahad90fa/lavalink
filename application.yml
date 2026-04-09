@@ -1,29 +1,58 @@
 server:
-  port: ${PORT:2333}
+  port: 2333
   address: 0.0.0.0
 
 lavalink:
   server:
     password: "fahad123"
 
-    # IMPORTANT: disable built-in YouTube (plugin will replace it)
+    # -----------------------------
+    # SOURCES CONFIG (IMPORTANT)
+    # -----------------------------
     sources:
       youtube: false
       soundcloud: true
-      http: true
       bandcamp: true
-      twitch: true
-      vimeo: true
+      twitch: false
+      vimeo: false
+      http: true
+      local: false
 
-    # recommended stability settings
-    bufferDurationMs: 400
-    youtubePlaylistLoadLimit: 6
+    # -----------------------------
+    # AUDIO FILTERS (optional but recommended)
+    # -----------------------------
+    filters:
+      volume: true
+      equalizer: true
+      karaoke: true
+      timescale: true
+      tremolo: true
+      vibrato: true
+      rotation: true
+      distortion: true
+      channelMix: true
+      lowPass: true
+
+    # -----------------------------
+    # FRAME HANDLING
+    # -----------------------------
+    frameBufferDurationMs: 5000
+
+    opusEncodingQuality: 10
+
+    resamplingQuality: LOW
+
+    trackStuckThresholdMs: 10000
+    useSeekGhosting: true
+
+    # -----------------------------
+    # PLAYER BEHAVIOR
+    # -----------------------------
+    youtubePlaylistLoadLimit: 0
+
     playerUpdateInterval: 5
-
-plugins:
-  youtube:
-    enabled: true
 
 logging:
   level:
     root: INFO
+    lavalink: INFO
