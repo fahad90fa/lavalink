@@ -6,7 +6,7 @@ lavalink:
   server:
     password: "fahad123"
     sources:
-      youtube: false
+      youtube: true
       soundcloud: true
       http: true
 
