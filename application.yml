@@ -2,7 +2,27 @@ server:
   port: 2333
   address: 0.0.0.0
 
+plugins:
+  lavasrc:
+    providers:
+      - "ytsearch:\"%ISRC%\""
+      - "ytsearch:%QUERY%"
+    sources:
+      spotify: true
+      applemusic: false
+      deezer: false
+      flowerytts: false
+      yandexmusic: false
+      vkmusic: false
+    spotify:
+      clientId: "982f7c66273a4c759c0a7e83a6fdbc37"
+      clientSecret: "c3534dc023084dfeb25eff6215ff9374"
+
 lavalink:
+  plugins:
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.0"
+      repository: "https://maven.lavalink.dev/releases"
+
   server:
     password: "fahad123"
 
